@@ -1,4 +1,8 @@
 import React from 'react';
+import Logo from './Components/Logo';
+import Search from './Components/Search';
+import Userarea from './Components/Userarea';
+import Deadlinks from './Components/Deadlinks';
 
 class App extends React.Component {
   constructor (props) {
@@ -11,7 +15,10 @@ class App extends React.Component {
   render () {
     return (
       <>
-      <h1>searchBar</h1>
+      <Logo />
+      <Search />
+      <Userarea />
+      <Deadlinks />
       </>
     );
   }
