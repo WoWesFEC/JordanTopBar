@@ -14,8 +14,7 @@ class App extends React.Component {
   }
 
   handleChange (e) {
-    e.preventDefault();
-    
+    this.setState({search: `${e.target.value}`})
   }
 
   render () {
