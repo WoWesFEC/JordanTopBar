@@ -8,15 +8,21 @@ class App extends React.Component {
   constructor (props) {
     super (props);
     this.state = {
-      placeHolder: ''
+      search: ''
     }
+    this.handleChange = this.handleChange.bind(this);
+  }
+
+  handleChange (e) {
+    e.preventDefault();
+    
   }
 
   render () {
     return (
       <>
       <Logo />
-      <Search />
+      <Search handleChange={this.handleChange}/>
       <Userarea />
       <Deadlinks />
       </>
