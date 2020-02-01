@@ -10,7 +10,14 @@ class Search extends React.Component {
 
   render () {
     return (
-      <div>Search</div>
+      <div>
+        <input 
+        type="text" 
+        id="search" 
+        placeholder="Search" 
+        onChange={this.props.handleChange}>
+        </input>
+      </div>
     );
   }
 }
