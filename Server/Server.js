@@ -12,7 +12,6 @@ app.use(express.static(path.join(__dirname + '/../Dist')));
 
 app.post('/search', (req, res) => {
   db.fuzzySearch(req.body.search, (err, data) => {
-    console.log(req.body.search)
     if (err) {
       res.send(err);
     } else {
