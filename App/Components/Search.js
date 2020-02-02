@@ -10,7 +10,7 @@ class Search extends React.Component {
 
   render () {
     return (
-      <div>
+      <div className="search">
         <input 
         type="text" 
         id="search" 

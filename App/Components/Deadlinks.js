@@ -2,7 +2,7 @@ import React from 'react';
 
 const Deadlinks = () => {
   return (
-    <div id="Deadlinks">
+    <div className="Deadlinks">
       <button>Shop</button>
       <button>Ideas</button>
       <button>Savings</button>

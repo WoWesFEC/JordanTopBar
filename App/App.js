@@ -3,7 +3,7 @@ import Logo from './Components/Logo';
 import Search from './Components/Search';
 import Userarea from './Components/Userarea';
 import Deadlinks from './Components/Deadlinks';
-import './style.scss';
+import './style.sass';
 import axios from 'axios';
 class App extends React.Component {
   constructor (props) {
@@ -23,14 +23,14 @@ class App extends React.Component {
       })
       .catch((err) => {
         console.log(err);
-      })
-    })
+      });
+    });
     console.log(this.state.data);
   }
 
   handleEnterPressed (e) {
     let code = e.keyCode || e.which;
-    if(code === 13) { 
+    if (code === 13) { 
       // needs to make a request to my database,
       // post to everyone elses databases
     } 
@@ -38,9 +38,9 @@ class App extends React.Component {
 
   render () {
     return (
-      <div class="jordan">
+      <div className="jordan">
       <Logo />
-      <Search handleChange={this.handleChange}/>
+      <Search handleChange={this.handleChange} />
       <Userarea />
       <Deadlinks />
       </div>
