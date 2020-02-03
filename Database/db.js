@@ -8,12 +8,12 @@ const db = mySql.createConnection({
 });
 
 const fuzzySearch = (search, callback) => {
-   db.query(`SELECT name, category FROM searchdata WHERE name LIKE '%${search}%' OR category LIKE '%${search}%' LIMIT 10;`,
-   (error, results, fields) => {
+  db.query(`SELECT name, category FROM searchdata WHERE name LIKE '%${search}%' OR category LIKE '%${search}%' LIMIT 10;`,
+    (error, results, fields) => {
       if (error) {
-         callback(error, null);
+        callback(error, null);
       } else {
-         callback(null, results);
+        callback(null, results);
       }
    })
 }
