@@ -14,7 +14,7 @@ class Search extends React.Component {
         <input 
         type="text" 
         id="search" 
-        placeholder="Search" 
+        placeholder="did someone say thunderfury blessed blade of the windseeker?" 
         onChange={this.props.handleChange}>
         </input>
       </div>
