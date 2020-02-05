@@ -1,4 +1,5 @@
 import React from 'react';
+import Dropdown from './Dropdown';
 
 class Search extends React.Component {
   constructor (props) {
@@ -10,10 +11,10 @@ class Search extends React.Component {
 
   render () {
     return (
-      <div className="search">
+      <div className="jsearch">
         <input 
         type="text" 
-        id="search" 
+        id="jsearch" 
         placeholder="did someone say thunderfury blessed blade of the windseeker?" 
         onChange={this.props.handleChange}>
         </input>

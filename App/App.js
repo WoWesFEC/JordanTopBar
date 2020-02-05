@@ -13,11 +13,12 @@ class App extends React.Component {
       data: ''
     }
     this.handleChange = this.handleChange.bind(this);
+    this.handleClick = this.handleClick.bind(this);
   }
 
   handleChange (e) {
     this.setState({search: e.target.value}, () => {
-      axios.post('/search', {search: this.state.search})
+      axios.post('http://Jordantopbar-env.bpppx4cenp.us-east-2.elasticbeanstalk.com/search', {search: this.state.search})
       .then ((data) => {
         this.setState({data: data.data})
       })
@@ -28,12 +29,8 @@ class App extends React.Component {
     console.log(this.state.data);
   }
 
-  handleEnterPressed (e) {
-    let code = e.keyCode || e.which;
-    if (code === 13) { 
-      // needs to make a request to my database,
-      // post to everyone elses databases
-    } 
+  handleClick (e) {
+
   }
 
   render () {
@@ -46,6 +43,6 @@ class App extends React.Component {
       </div>
     );
   }
-}
+};
 
 export default App;

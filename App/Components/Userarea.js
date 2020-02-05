@@ -10,7 +10,7 @@ class Userarea extends React.Component {
 
   render () {
     return (
-      <div className="userarea">User Area</div>
+      <div className="juserarea">User Area</div>
     );
   }
 }

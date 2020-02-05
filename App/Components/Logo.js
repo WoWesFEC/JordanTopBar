@@ -2,12 +2,12 @@ import React from 'react';
 
 const Logo = () => {
   return (
-    <div className="logo">
+    <div className="jlogo">
       <picture>
-        <img id="logo" src="./pics/wowes.png"></img>
+        <img id="jlogo" src="./images/wowes.png"></img>
       </picture>
-      <div id="auswowes">Austin Wowe's</div>
-      <div id="open">Open 24 hours!</div>
+      <div id="jauswowes">Austin Wowe's</div>
+      <div id="jopen">Open 24 hours!</div>
     </div>
   );
 }
