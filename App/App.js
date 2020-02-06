@@ -10,7 +10,7 @@ class App extends React.Component {
     super (props);
     this.state = {
       search: '',
-      data: ''
+      data: []
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleClick = this.handleClick.bind(this);
@@ -18,14 +18,17 @@ class App extends React.Component {
 
   handleChange (e) {
     this.setState({search: e.target.value}, () => {
-      axios.post('http://Jordantopbar-env.bpppx4cenp.us-east-2.elasticbeanstalk.com/search', {search: this.state.search})
-      .then ((data) => {
-        this.setState({data: data.data})
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-    });
+      if (this.state.search === '') {
+        this.setState({data: []});
+      } else {
+        axios.post('http://Jordantopbar-env.bpppx4cenp.us-east-2.elasticbeanstalk.com/search', {search: this.state.search})
+        .then ((data) => {
+          this.setState({data: data.data})
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      }});
     console.log(this.state.data);
   }
 
@@ -36,10 +39,10 @@ class App extends React.Component {
   render () {
     return (
       <div className="jordan">
-      <Logo />
-      <Search handleChange={this.handleChange} />
-      <Userarea />
-      <Deadlinks />
+        <Logo />
+        <Search handleChange={this.handleChange} searchData={this.state.data} />
+        <Userarea />
+        <Deadlinks />
       </div>
     );
   }
