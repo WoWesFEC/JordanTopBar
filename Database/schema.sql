@@ -5,10 +5,9 @@ CREATE DATABASE searchbar;
 USE searchbar;
 
 CREATE TABLE searchdata (
-  id int NOT NULL AUTO_INCREMENT,
+  id int NOT NULL AUTO_INCREMENT PRIMARY KEY,
   name varchar(150) ,
-  category varchar(25),
-  PRIMARY KEY (ID)
+  category varchar(25)
 );
 
 INSERT INTO searchdata (id, name, category) VALUES (1, "Lionheart Helm", "armor");

@@ -13,9 +13,22 @@ class App extends React.Component {
       data: []
     }
     this.handleChange = this.handleChange.bind(this);
-    this.handleClick = this.handleClick.bind(this);
+    this.resetState = this.resetState.bind(this);
+  }
+  
+  componentDidMount () {
+    window.addEventListener('jordanAwesome', this.resetState);
+    //window.addEventListener('tomCart', /* function for the shopping cart */);
+    //window.addEventListener('searched', this.resetState);
   }
 
+  resetState () {
+    this.setState({
+      search: '',
+      data: []
+    })
+  }
+  
   handleChange (e) {
     this.setState({search: e.target.value}, () => {
       if (this.state.search === '') {
@@ -28,19 +41,21 @@ class App extends React.Component {
         .catch((err) => {
           console.log(err);
         });
-      }});
+      };
+    });
     console.log(this.state.data);
-  }
-
-  handleClick (e) {
-
   }
 
   render () {
     return (
       <div className="jordan">
         <Logo />
-        <Search handleChange={this.handleChange} searchData={this.state.data} />
+        <Search
+          handleChange={this.handleChange} 
+          handleClick={this.handleClick} 
+          searchData={this.state.data}
+          search={this.state.search}
+        />
         <Userarea />
         <Deadlinks />
       </div>

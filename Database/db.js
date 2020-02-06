@@ -13,10 +13,10 @@ db.connect(() => {
 })
 
 const fuzzySearch = (search, callback) => {
-  db.query(`SELECT name, category FROM searchdata WHERE name LIKE '%${search}%' OR category LIKE '%${search}%' LIMIT 8;`,
-    (error, results, fields) => {
-      if (error) {
-        callback(error, null);
+  db.query(`SELECT * FROM searchdata WHERE name LIKE '%${search}%' OR category LIKE '%${search}%' LIMIT 8;`,
+    (err, results) => {
+      if (err) {
+        callback(err);
       } else {
         callback(null, results);
       }

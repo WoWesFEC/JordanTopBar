@@ -13,7 +13,6 @@ class Dropdown extends React.Component {
     return (
       <div id="jdropdown">
         <ul>
-          {/* map over the data sent from the search and pass each data set down to the MenuFill property */}
           {
             this.props.searchData.map((data, i) => {
               return (
