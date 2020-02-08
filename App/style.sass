@@ -39,6 +39,7 @@
   .jsearch
     grid-column: 2
     grid-row: 1
+    background-image: url"./images/searchglass.png"
     border-left: 1px solid #ccc
     border-right: 1px solid #ccc
 
@@ -74,11 +75,12 @@
       outline: none
   
   #jsearchglass
+    position: absolute
+    z-index: -1
     grid-column: 2
     grid-row: 1
     width: 25px
     height: 25px
-    z-index: -1
       
   .juserarea
     grid-row: 1
@@ -104,22 +106,24 @@
     .jbuttong1
       grid-column: 1
       grid-row: 1
+      position: absolute
+      width: 100%
       .jbutton1
         font-family: Helvetica,Arial,sans-serif
         border: hidden
         font-weight: bold
         font-size: 100%
-        margin-right: 5%
+        margin-right: 2%
         cursor: pointer
         outline: none
       .jbutton1:hover
+        padding-bottom: .90%
         border-bottom: 2px solid mediumblue
         
     .jbuttong2
-      position: relative
       grid-column: 2
       grid-row: 1
-      margin-left: -16%
+      margin-left: 40%
       .jbutton2
         font-family: Helvetica,Arial,sans-serif
         border: hidden
