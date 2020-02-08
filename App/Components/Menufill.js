@@ -10,7 +10,7 @@ const Menufill = ({data}) => {
   };
   //console.log(data);
   return (
-    <li id="jmenufill" onClick={handleClick}>
+    <li className="jmenufill" onClick={handleClick}>
       {data.name}
     </li>
   );

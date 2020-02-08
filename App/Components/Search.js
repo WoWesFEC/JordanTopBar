@@ -12,14 +12,19 @@ class Search extends React.Component {
   render () {
     return (
       <div className="jsearch">
-        <input 
-          type="text" 
-          id="jsearch" 
-          placeholder="did someone say thunderfury blessed blade of the windseeker?" 
-          onChange={this.props.handleChange}
-          value={this.props.search}>
-        </input>
-        <Dropdown className={this.props.search.length ? "jddvisible" : "jddinvisible"} searchData={this.props.searchData}/>
+        {/* <picture>
+          <img id="jsearchglass" src="./images/searchglass.png"></img>
+        </picture> */}
+          <input
+            type="text" 
+            id="jsearch" 
+            placeholder="What are you looking for today?" 
+            onChange={this.props.handleChange}
+            value={this.props.search}>
+          </input>
+        <div className={this.props.search.length ? "jddvisible" : "jddinvisible"} searchData={this.props.searchData}>
+          <Dropdown className={this.props.search.length ? "jddvisible" : "jddinvisible"} searchData={this.props.searchData}/>
+        </div>
       </div>
     );
   }

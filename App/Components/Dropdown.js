@@ -11,8 +11,8 @@ class Dropdown extends React.Component {
 
   render () {
     return (
-      <div id="jdropdown">
-        <ul>
+      <div>
+        <ul id="jlist">
           {
             this.props.searchData.map((data, i) => {
               return (

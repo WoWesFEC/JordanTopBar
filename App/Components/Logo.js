@@ -6,7 +6,7 @@ const Logo = () => {
       <picture>
         <img id="jlogo" src="./images/wowes.png"></img>
       </picture>
-      <div id="jauswowes">Austin Wowe's</div>
+      <div id="jauswowes">S. E. Austin WoWe's ></div>
       <div id="jopen">Open 24 hours!</div>
     </div>
   );
