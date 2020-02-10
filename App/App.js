@@ -10,42 +10,57 @@ class App extends React.Component {
     super (props);
     this.state = {
       search: '',
-      data: ''
+      data: []
     }
     this.handleChange = this.handleChange.bind(this);
+    this.resetState = this.resetState.bind(this);
+  }
+  
+  componentDidMount () {
+    window.addEventListener('jordanAwesome', this.resetState);
+    //window.addEventListener('tomCart', /* function for the shopping cart */);
+    //window.addEventListener('searched', this.resetState);
   }
 
+  resetState () {
+    this.setState({
+      search: '',
+      data: []
+    })
+  }
+  
   handleChange (e) {
     this.setState({search: e.target.value}, () => {
-      axios.post('/search', {search: this.state.search})
-      .then ((data) => {
-        this.setState({data: data.data})
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+      if (this.state.search === '') {
+        this.setState({data: []});
+      } else {
+        axios.post('http://Jordantopbar-env.bpppx4cenp.us-east-2.elasticbeanstalk.com/search', {search: this.state.search})
+        .then ((data) => {
+          this.setState({data: data.data})
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+      };
     });
     console.log(this.state.data);
-  }
-
-  handleEnterPressed (e) {
-    let code = e.keyCode || e.which;
-    if (code === 13) { 
-      // needs to make a request to my database,
-      // post to everyone elses databases
-    } 
   }
 
   render () {
     return (
       <div className="jordan">
-      <Logo />
-      <Search handleChange={this.handleChange} />
-      <Userarea />
-      <Deadlinks />
+        <Logo />
+        <Search
+          handleChange={this.handleChange} 
+          handleClick={this.handleClick} 
+          searchData={this.state.data}
+          search={this.state.search}
+        />
+        <Userarea />
+        <Deadlinks />
       </div>
     );
   }
-}
+};
 
 export default App;

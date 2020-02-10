@@ -10,7 +10,14 @@ class Userarea extends React.Component {
 
   render () {
     return (
-      <div className="userarea">User Area</div>
+      <div className="juserarea">
+        <picture>
+          <img id="jaccount" src="./images/account.png"></img>
+        </picture>
+        <picture>
+          <img id="jshoppingCart" src="./images/shoppingCart.png"></img>
+        </picture>
+      </div>
     );
   }
 }
